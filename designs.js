@@ -45,6 +45,17 @@ function makeGrid(height, width) {
     for (let j= 0; j < width; j++) {
         canvas_rows.append('<td></td>');
     }
+<<<<<<< HEAD
+=======
+    //selects the cells and assign them to a variable
+    let canvasCells = $('td');
+    //Event listener that sets the background color of the cell to the user's selected color 
+    canvasCells.click(function(){
+        console.log('color picker is running');
+        const color = $('#colorPicker').val();
+        $(this).attr('bgcolor', color);
+    })
+>>>>>>> 2d8a54ba55146f5d2c15a3da6b525ce2a2e487e1
 }
 
 /**
