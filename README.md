@@ -8,7 +8,7 @@
 ## Details
 
 The Pixel Art Maker Project is the final quiz for the Google Africa Challenge: Front-End on Udacity. 
-The Pixel Art Maker app creates grids according to the size specified by the user and allows the user to make pixel art by clicking on the grids and selecting prefered colors.
+The Pixel Art Maker app, built with HTML, CSS and JavaScript, creates grids according to the size specified by the user and allows the user to make pixel art by clicking on the grids using prefered colors.
 
 ## Link to app
 
