@@ -33,7 +33,7 @@ function makeGrid(height, width) {
     //Event listener that sets the background color of the cell to the user's selected color 
     canvasCells.click(function(){
         console.log('color picker is running');
-        let color = $('#colorPicker').val();
+        const color = $('#colorPicker').val();
         $(this).attr('bgcolor', color);
     })
 }
