@@ -1,32 +1,39 @@
+// Event Listener to call clearGrid and makeGrid when submit is clicked by the user
+$('#sizePicker').submit(function(event) {
+    //select size inputs (height and width) and assign to variables
+    let gridHeight = $('#inputHeight').val();
+    let gridWidth = $('#inputWeight').val();
+    event.preventDefault();
+    clearGrid();
+    makeGrid(gridHeight, gridWidth);
+    console.log('Height: '+ gridHeight+ ', Width: '+gridWidth);
+})
 
 /**
-* @description Divides the pixel canvas into a numnber of cells changes the color of each cell when clicked
+* @description Divides the pixel canvas into a number of cells and changes the color of each cell when clicked
+* @param {int} height  - grid height of the pixel canvas
+* @param {int} width - grid width of the pixel canvas
 */
-function makeGrid() {
-    // Select pixel canvas and size inputs (height and weight) and assign them to variables
+function makeGrid(height, width) {
+    console.log('makeGrid function is running');
+    //selects the pixel canvas id and assigns it to a variable
     let pixelCanvas = $('#pixelCanvas');
-    const gridHeight = $('#inputHeight').val();
-    const gridWidth = $('#inputWeight').val();
-
-    //create rows within the pixel canvas 
-    for (let i= 0; i < gridHeight; i++) {
+    //creates rows within the pixel canvas 
+    for (let i= 0; i < height; i++) {
         pixelCanvas.append('<tr></tr>');
     }
-    // select the rows of the pixel canvas and assigns it to a variable
-    const canvasRows = $('tr');
-
-    //create cells within each row of pixel canvas
-    for (let j= 0; j < gridWidth; j++) {
+    // selects rows of the pixel canvas and assign them to a variable
+    let canvasRows = $('tr');
+    //creates cells within each row of the pixel canvas
+    for (let j= 0; j < width; j++) {
         canvasRows.append('<td></td>');
     }
-    //select the cells and assign it to a variable
-    let canvasCells = pixelCanvas.find('td');
-
-    //change the color of the each cell when it is clicked by the user
+    //selects the cells and assign them to a variable
+    let canvasCells = $('td');
+    //Event listener that sets the background color of the cell to the user's selected color 
     canvasCells.click(function(){
-        //select the value of the color inputted by the user and assign to a variable
+        console.log('color picker is running');
         let color = $('#colorPicker').val();
-        //change the background color of the cell to the color selected by the user
         $(this).attr('bgcolor', color);
     })
 }
@@ -35,14 +42,8 @@ function makeGrid() {
 * @description Clears and refreshes the pixel canvas
 */
 function clearGrid(){
+    console.log('clearGrid function is running');
     let pixelCanvas = $('#pixelCanvas');
     pixelCanvas.children().remove();
 }
 
-// When size is submitted by the user, call clearGrid to refresh and makeGrid() to build the grid
-var sizePicker = $('#sizePicker');
-sizePicker.submit(function(event) {
-event.preventDefault();
-clearGrid();
-makeGrid();
-})
