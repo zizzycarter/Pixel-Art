@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [Details](#details)
-* [Link to app](#link)
+* [Link to pixel art maker app](#link)
 
 ## Details
 
@@ -12,4 +12,4 @@ The Pixel Art Maker app creates grids according to the size specified by the use
 
 ## Link to app
 
-The Pixel Maker app was hosted using github pages and here is the link: 
+The Pixel Maker app was hosted using github pages and the link can be found here: https://zizzycarter.github.io/Pixel-Art/
